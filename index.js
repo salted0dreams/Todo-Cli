@@ -18,12 +18,12 @@ const listTodos = () => {
             todos.forEach((todo) => {
                 if (todo.status) {
                     console.info(
-                        `Title: ${todo.title.green.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id.bold} `
+                        `Title: ${todo.title.green.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id}\n\n`
                     );
                     // db.close();
                 } else {
                     console.info(
-                        `Title: ${todo.title.red.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id.bold}`
+                        `Title: ${todo.title.red.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id}\n\n`
                     );
                     // db.close();
                 }
@@ -35,12 +35,24 @@ const listTodos = () => {
 // Find a todo
 const findTodo = (title) => {
     const search = new RegExp(title, "i");
-    Todo.find({ $or: [{ title: search }] }).then((todo) => {
-        if (todo.status) {
-            console.info("Todo Found".green.bold);
-            console.log(
-                `Title: ${todo.title.green.bold} Description: ${todo.description.yellow.bold} Status: ${todo.status.bold}`
-            );
+    Todo.find({ title: search }).then((todo) => {
+        if (todo.length == 0) {
+            console.info("No Todos Found".red);
+            // db.close();
+        } else {
+            todo.forEach((todo) => {
+                if (todo.status) {
+                    console.info(
+                        `Title: ${todo.title.green.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id}\n\n`
+                    );
+                    // db.close();
+                } else {
+                    console.info(
+                        `Title: ${todo.title.red.bold}\nDescription: ${todo.description.yellow.bold}\nId: ${todo._id}\n\n`
+                    );
+                    // db.close();
+                }
+            });
         }
     });
 };
