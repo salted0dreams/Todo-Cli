@@ -1,0 +1,21 @@
+{
+  "name": "toods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./commands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^10.0.0",
+    "conf": "^11.0.1",
+    "inquirer": "^8.2.5",
+    "mongoose": "^7.0.1"
+  }
+}
