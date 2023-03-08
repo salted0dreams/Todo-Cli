@@ -1,6 +1,6 @@
 ### Todo (CLI version)
 
-    This is a command line version of todo list. It performs all the basic commands like add, update, mark doneand delete a todo task. You can also view all the tasks and mark them done.
+This is a command line version of todo list. It performs all the basic commands like add, update, mark doneand delete a todo task. You can also view all the tasks and mark them done.
 
 #
 
